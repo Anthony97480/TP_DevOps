@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: calculator-div-container
-          image: calculator-div
+          image: 192.168.10.211:5000/calculator-div
           imagePullPolicy: Always
           ports:
             - containerPort: 80
