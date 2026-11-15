@@ -58,6 +58,33 @@ pipeline {
 	    }
 	}
 	
+	stage('Diagnostic Kubernetes') {
+    steps {
+        sh '''
+            echo "Utilisateur actuel :"
+            whoami
+
+            echo "HOME :"
+            echo $HOME
+
+            echo "KUBECONFIG :"
+            echo $KUBECONFIG
+
+            echo "Contexte Kubernetes :"
+            kubectl config current-context
+
+            echo "Adresse du cluster :"
+            kubectl config view --minify \
+                -o jsonpath='{.clusters[0].cluster.server}'
+
+            echo ""
+
+            echo "Variables proxy :"
+            env | grep -i proxy || true
+        '''
+    }
+}
+
 	stage('Deploy to Kubernetes') {
 	    steps {
 		sh '''
