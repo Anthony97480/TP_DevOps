@@ -5,7 +5,7 @@ metadata:
 spec:
   selector:
     app: calculator-calc
-  port:
+  ports:
     - protocol: TCP
       port: 80
       targetPort: 9000

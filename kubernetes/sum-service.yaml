@@ -5,7 +5,7 @@ metadata:
 spec:
   selector:
     app: calculator-sum
-  port:
+  ports:
     - protocol: TCP
       port: 50001
       targetPort: 50001

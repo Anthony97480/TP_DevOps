@@ -5,7 +5,7 @@ metadata:
 spec:
   selector:
     app: calculator-sub
-  port:
+  ports:
     - protocol: TCP
       port: 50002
       targetPort: 50002

@@ -5,7 +5,7 @@ metadata:
 spec:
   selector:
     app: calculator-div
-  port:
+  ports:
     - protocol: TCP
       port: 50004
       targetPort: 50004

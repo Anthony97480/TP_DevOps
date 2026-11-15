@@ -5,7 +5,7 @@ metadata:
 spec:
   selector:
     app: calculator-mul
-  port:
+  ports:
     - protocol: TCP
       port: 50003
       targetPort: 50003
