@@ -48,7 +48,7 @@ pipeline {
             }
         }
 	
-	stage("Push images') {
+	stage('Push images') {
 	    steps {
 		sh 'docker push 192.168.10.211:5000/calculator-calc:latest'
 		sh 'docker push 192.168.10.211:5000/calculator-sum:latest'
