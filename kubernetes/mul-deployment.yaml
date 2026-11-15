@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: calculator-mul
 
-sprc:
+spec:
   replicas: 1
   selector:
     matchLabels:
