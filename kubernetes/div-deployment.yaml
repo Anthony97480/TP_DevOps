@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployement
+metadata:
+  name: calculator-div
+
+sprc:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: calculator-div
+  template:
+    metadata:
+      labels:
+        app: calculator-div
+    spec:
+      containers:
+        - name: calculator-div-container
+          image: calculator-div
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
+              protocol: TCP

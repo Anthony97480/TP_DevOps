@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: sub
+spec:
+  selector:
+    app: calculator-sub
+  port:
+    - protocol: TCP
+      port: 50002
+      targetPort: 50002
+  type: ClusterIP

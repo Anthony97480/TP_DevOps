@@ -57,6 +57,23 @@ pipeline {
 		sh 'docker push 192.168.10.211:5000/calculator-div:latest'
 	    }
 	}
+	
+	stage('Deploy to Kubernetes') {
+	    steps {
+		sh '''
+		    kubectl apply -f kubernetes/calc-deployment.yaml
+		    kubectl apply -f kubernetes/sum-deployment.yaml
+		    kubectl apply -f kubernetes/sub-deployment.yaml
+		    kubectl apply -f kubernetes/mul-deployment.yaml
+		    kubectl apply -f kubernetes/div-deployment.yaml
+		    kubectl apply -f kubernetes/calc-service.yaml
+		    kubectl apply -f kubernetes/sum-service.yaml
+		    kubectl apply -f kubernetes/sub-service.yaml
+		    kubectl apply -f kubernetes/mul-service.yaml
+		    kubectl apply -f kubernetes/div-service.yaml
+		'''
+	    }
+	}
     }
 
     post {
